@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VS7_EmailAttachInvoice>
+            <version>0.1.0</version>
+        </VS7_EmailAttachInvoice>
+    </modules>
+    <global>
+        <models>
+            <vs7_emailattachinvoice>
+                <class>VS7_EmailAttachInvoice_Model</class>
+            </vs7_emailattachinvoice>
+        </models>
+        <events>
+            <fooman_emailattachments_before_send_order>
+                <observers>
+                    <vs7_emailattachinvoice_observer>
+                        <type>singleton</type>
+                        <class>vs7_emailattachinvoice/observer</class>
+                        <method>beforeSendOrder</method>
+                    </vs7_emailattachinvoice_observer>
+                </observers>
+            </fooman_emailattachments_before_send_order>
+        </events>
+    </global>
+</config>
